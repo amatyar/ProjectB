@@ -1,18 +1,22 @@
-function clicked() {
-  var user = document.getElementById('username');
-  var pass = document.getElementById('password');
+var attempt= 3;
 
-  var coruser="test";
-  var corpass="123";
-  if(user.value == coruser){
-    if(pass.value== corpass)
-    {
-      window.alret(" you are logged on as " + user.value);
-      window.open("http://www.yahoo.com");
-    }else {
-      window.alret("Incorrect username or password");
+function clicked() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+if( (username == "test") && (password == "123"))
+  {
+
+    window.location="http://www.yahoo.com";
+    return false;
+  }
+else {
+    attempt --;
+    window.alret="You have left"+ alret +"attempts;";
+    if (attempt == 0){
+      document.getElementById("username").disable = true;
+      document.getElementById("password").disable= true;
+
+      return false;
     }
-  }else {
-    window.alret("incorrect username or password");
   }
 }
